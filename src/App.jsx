@@ -9,13 +9,13 @@ function App() {
   const [title, setTitle] = useState("");
   
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/photos')
+    axios.get('https://jsonplaceholder.typicode.com/todos/1')
     .then(res => setTitle(res))
   }, [])
 //PARA CONSUMIR UNA APIS
 //---------------------------------------------//
 
-console.log(title)
+
 
 //------------------------------------------------//
 
@@ -55,10 +55,9 @@ console.log(title)
   useEffect(() =>{
     console.log("counter cambió :D")
   }, [count])
-
   return (
     <div className="App">
-      {/* <h2 style={{color:"white", textAlign:"center"}}>{title.data.title}</h2> */}
+      <h2 style={{color:"white", textAlign:"center"}}>{title.data.title}</h2>
       <div className='contain'>
         <div className="counter">
           <div className='number'>{count}</div>
