@@ -20,9 +20,9 @@ console.log(title)
 //------------------------------------------------//
 
   const [count, setCount] = useState(0);
-  const [isVisible, setIsVisible] = useState(true); // es parte de la negacion
+  const [isVisible, setIsVisible] = useState(true);
   const handleInput = () =>{
-    setIsVisible(!isVisible) //se niega para ser tipo toggle
+    setIsVisible(!isVisible)
   }
   
   const increment = () =>{
@@ -56,11 +56,9 @@ console.log(title)
     console.log("counter cambió :D")
   }, [count])
 
-  console.log("me rendericé");
-
   return (
     <div className="App">
-      <h2 style={{color:"white", textAlign:"center"}}>{title.data.title}</h2>
+      {/* <h2 style={{color:"white", textAlign:"center"}}>{title.data.title}</h2> */}
       <div className='contain'>
         <div className="counter">
           <div className='number'>{count}</div>
@@ -73,7 +71,6 @@ console.log(title)
         <div className='password'>
           <input type={isVisible ? "password" : "text"} />
           <button onClick={handleInput}>{isVisible ? "Mostrar" : "Ocultar"}</button>
-          {/* Esta condicion es creada porque en la parte de arriba(linea 22) esta la parte de esta condicion */}
         </div>
       </div>
     </div>
